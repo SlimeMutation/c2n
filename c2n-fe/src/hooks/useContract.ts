@@ -10,6 +10,10 @@ export const useAirdropContract = () => {
   const signer = useAppSelector(state => state.contract.signer);
   const walletAddress = useAppSelector(state => state.contract.walletAddress);
 
+  console.log("Chain:", chain);
+  console.log("Signer:", signer);
+  console.log("Wallet Address:", walletAddress);
+  
   const viewProvider = new providers.JsonRpcProvider(chain?.rpc[0]);
   if (!signer || !walletAddress) {
     console.log('no signer')
